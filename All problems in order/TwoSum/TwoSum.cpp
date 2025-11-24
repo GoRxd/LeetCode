@@ -39,23 +39,25 @@ public:
         int left = 0;
         int right = betterNums.size() - 1;
 
-        while (left < right) {
+        while (left < right)
+        {
             int sum = betterNums[left].value + betterNums[right].value;
 
-            if (sum > target) {
-                --right;
+            if (sum > target) 
+            {
+                right--;
             } 
-            else if (sum < target) {
-                ++left;
+            else if (sum < target) 
+            {
+                left++;
             } 
             else {
                 result.push_back(betterNums[left].index);
-                result.push_back(betterNums[right].index);
-                break;
+                result.push_back(betterNums[right].index);        
+                return result;
             }
         }
 
-        return result;
     }
 };
 
